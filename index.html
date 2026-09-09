@@ -1,335 +1,62 @@
+HTML
 <!DOCTYPE html>
-<html lang="ka">
+<html>
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROYAL TASTE | პრემიუმ ქეთერინგი</title>
 <style>
-:root {
---primary: #1a252c;
---accent: #c5a059;
---accent-hover: #b08d46;
---bg: #f8f9fa;
---card-bg: #ffffff;
---text: #2c3e50;
---text-muted: #7f8c8d;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
-body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-•
-•
-•
-•
-•
-
-1.
-2.
-3.
-4.
-5.
-
-header {
-background-color: var(--primary);
-color: white;
-padding: 1rem 2rem;
-position: sticky;
-top: 0;
-z-index: 100;
-display: flex;
-justify-content: space-between;
-align-items: center;
-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-.logo { font-size: 1.6rem; font-weight: bold; color: var(--accent); letter-spacing: 1.5px; }
-.cart-btn {
-background-color: var(--accent);
-color: white;
-border: none;
-padding: 0.6rem 1.4rem;
-border-radius: 25px;
-cursor: pointer;
-font-weight: bold;
-font-size: 1rem;
-transition: all 0.3s;
-}
-.cart-btn:hover { background-color: var(--accent-hover); transform: scale(1.05); }
-.hero {
-background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/
-photo-1555244162-803834f70033?auto=format&fit=crop&w=1350&q=80');
-background-size: cover;
-background-position: center;
-color: white;
-text-align: center;
-padding: 4rem 1rem;
-}
-.hero h1 { font-size: 2.5rem; margin-bottom: 0.8rem; color: #ffffff; }
-.hero p { font-size: 1.2rem; color: #e2e8f0; max-width: 600px; margin: 0 auto; }
-.container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
-.categories {
-display: flex;
-justify-content: center;
-gap: 0.8rem;
-margin-bottom: 2rem;
-flex-wrap: wrap;
-}
-.cat-btn {
-background: white;
-border: 1px solid #ddd;
-padding: 0.5rem 1.2rem;
-border-radius: 20px;
-cursor: pointer;
-font-weight: 600;
-transition: all 0.3s;
-}
-.cat-btn.active, .cat-btn:hover {
-background: var(--accent);
-color: white;
-border-color: var(--accent);
-}
-.grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-gap: 1.8rem;
-
-}
-.card {
-background: var(--card-bg);
-border-radius: 12px;
-overflow: hidden;
-box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-display: flex;
-flex-direction: column;
-transition: transform 0.3s;
-}
-.card:hover { transform: translateY(-6px); }
-.card img { width: 100%; height: 190px; object-fit: cover; }
-.card-body { padding: 1.2rem; display: flex; flex-direction: column; flex-grow: 1; }
-.card-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.4rem; }
-.card-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem; flex-grow: 1; }
-.card-footer { display: flex; justify-content: space-between; align-items: center; }
-.price { font-size: 1.25rem; font-weight: bold; color: var(--primary); }
-.add-btn {
-background: var(--primary);
-color: white;
-border: none;
-padding: 0.5rem 1rem;
-border-radius: 6px;
-cursor: pointer;
-font-weight: 600;
-transition: background 0.3s;
-}
-.add-btn:hover { background: var(--accent); }
-/* Modal */
-.modal {
-display: none;
-position: fixed;
-top: 0; left: 0; width: 100%; height: 100%;
-background: rgba(0,0,0,0.6);
-justify-content: center;
-align-items: center;
-z-index: 1000;
-}
-.modal-content {
-background: white;
-padding: 2rem;
-border-radius: 12px;
-width: 92%;
-max-width: 520px;
-max-height: 85vh;
-overflow-y: auto;
-}
-.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-.close-btn { cursor: pointer; font-size: 1.8rem; color: #888; }
-.cart-item {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0.6rem 0;
-border-bottom: 1px solid #eee;
-}
-.cart-item-controls button {
-background: #e2e8f0; border: none; padding: 2px 8px; border-radius: 4px; cursor: pointer; font-weight:
-bold;
-}
-.checkout-form { margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; }
-.checkout-form input, .checkout-form select {
-padding: 0.7rem; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95rem;
-
-}
-.submit-btn {
-background: #25D366; color: white; padding: 0.85rem; border: none; border-radius: 6px;
-font-weight: bold; font-size: 1rem; cursor: pointer; margin-top: 0.5rem; transition: background 0.3s;
-}
-.submit-btn:hover { background: #1da851; }
+  body { font-family: Arial, sans-serif; background: #f8f9fa; margin: 0; padding: 0; }
+  .header { background: #1a252c; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-size: 20px; font-weight: bold; color: #c5a059; }
+  .cart { background: #c5a059; color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold; }
+  .hero { background: #2c3e50; color: white; text-align: center; padding: 30px 10px; }
+  .categories { text-align: center; margin: 20px 0; }
+  .tag { background: white; border: 1px solid #ccc; padding: 6px 14px; border-radius: 15px; margin: 0 2px; font-weight: bold; display: inline-block; }
+  .active { background: #c5a059; color: white; border-color: #c5a059; }
+  .card { background: white; margin: 10px auto; max-width: 500px; padding: 15px; border-radius: 8px; border: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+  .price { font-weight: bold; font-size: 16px; color: #1a252c; }
+  .btn { background: #1a252c; color: white; padding: 6px 12px; border-radius: 5px; font-size: 12px; }
+  .checkout { background: white; border: 2px solid #c5a059; max-width: 500px; margin: 20px auto; padding: 20px; border-radius: 10px; }
+  .inp { background: #f1f1f1; border: 1px solid #ccc; padding: 8px; border-radius: 5px; width: 95%; margin-bottom: 10px; }
+  .wa-btn { background: #25D366; color: white; text-align: center; padding: 12px; font-weight: bold; border-radius: 6px; margin-top: 10px; }
 </style>
 </head>
 <body>
-<header>
-<div class="logo">LUX CATERING</div>
-<button class="cart-btn" onclick="toggleCart()"> კალათა (<span id="cart-count">0</span>)</button>
-</header>
-<section class="hero">
-<h1>პრემიუმ ქეთერინგის სერვისი</h1>
-<p>დაუკვეთეთ დახვეწილი ფურშეტები, კანაპეები და კერძები თქვენი ღონისძიებისთვის</p>
-</section>
-<div class="container">
+
+<div class="header">
+  <div class="logo">LUX CATERING</div>
+  <div class="cart">🛒 კალათა (2)</div>
+</div>
+
+<div class="hero">
+  <h2>პრემიუმ ქეთერინგის სერვისი</h2>
+  <p>დაუკვეთეთ ფურშეტები და კანაპეები</p>
+</div>
+
 <div class="categories">
-<button class="cat-btn active" onclick="filterCat('all', this)">ყველა</button>
-<button class="cat-btn" onclick="filterCat('canape', this)">კანაპეები</button>
-<button class="cat-btn" onclick="filterCat('burger', this)">ბურგერები</button>
-<button class="cat-btn" onclick="filterCat('tapas', this)">ესპანური ტაპასები</button>
-<button class="cat-btn" onclick="filterCat('dessert', this)">დესერტები</button>
+  <span class="tag active">ყველა</span>
+  <span class="tag">კანაპეები</span>
+  <span class="tag">ბურგერები</span>
 </div>
-<div class="grid" id="product-grid"></div>
-</div>
-<div class="modal" id="cart-modal">
-<div class="modal-content">
-<div class="modal-header">
-<h3>თქვენი შეკვეთა</h3>
-<span class="close-btn" onclick="toggleCart()">&times;</span>
-</div>
-<div id="cart-items"></div>
-<h3 style="margin-top: 1rem; text-align: right;">სულ: <span id="cart-total">0</span> €</h3>
-<form class="checkout-form" onsubmit="handleCheckout(event)">
-<h4 style="margin-top:0.5rem;">ღონისძიების დეტალები:</h4>
-<input type="text" id="cust-name" placeholder="თქვენი სახელი და გვარი" required>
-<input type="tel" id="cust-phone" placeholder="ტელეფონის ნომერი (WhatsApp)" required>
-<input type="text" id="cust-address" placeholder="მიწოდების მისამართი" required>
-<input type="date" id="event-date" required>
-<input type="number" id="guest-count" placeholder="სტუმრების სავარაუდო რაოდენობა" min="1" required>
-<select id="pay-method" required>
-<option value="Bizum">გადახდა Bizum-ით</option>
-<option value="Transfer">საბანკო გადარიცხვა</option>
-<option value="Cash">ნაღდი ანგარიშსწორება ადგილზე</option>
-</select>
-<button type="submit" class="submit-btn"> შეკვეთა WhatsApp-ით</button>
-</form>
-</div>
-</div>
-<script>
-// ჩაწერეთ თქვენი ტელეფონის ნომერი ქვეყნის კოდით (მაგ. 34600000000 ესპანეთისთვის)
-const MY_WHATSAPP_NUMBER = "34600000000";
-const products = [
-{ id: 1, cat: "canape", name: "კანაპეს ნაკრები Premium", price: 45, desc: "24 ცალი მრავალფეროვანი
-კანაპე ზღვის პროდუქტებითა და ყველის ასორტით.", img: "https://images.unsplash.com/photo-1541529086526-db283c563270?
-auto=format&fit=crop&w=500&q=80" },
-{ id: 2, cat: "burger", name: "მინი ბურგერების სეტი", price: 35, desc: "12 ცალი წვნიანი მინი ბურგერი
-საქონლის ხორცითა და ჩედარით.", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?
 
-auto=format&fit=crop&w=500&q=80" },
-{ id: 3, cat: "tapas", name: "ესპანური Tapas & Jamón Box", price: 55, desc: "ხამონი, ადგილობრივი
-ყველეული, ოლივები და ხრაშუნა პური.", img: "https://images.unsplash.com/photo-1544025162-d76694265947?
-auto=format&fit=crop&w=500&q=80" },
-{ id: 4, cat: "dessert", name: "ფურშეტის დესერტების დაფა", price: 40, desc: "16 ცალი ტრადიციული და
-თანამედროვე მინი დესერტი.", img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?
-auto=format&fit=crop&w=500&q=80" },
-{ id: 5, cat: "canape", name: "ვეგეტარიანული კანაპე Box", price: 38, desc: "20 ცალი მცენარეული კანაპე
-ავოკადოთი, ჰუმუსითა და ჩერი პომიდვრით.", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?
-auto=format&fit=crop&w=500&q=80" }
-];
-let cart = {};
-function renderProducts(filter = 'all') {
-const grid = document.getElementById('product-grid');
-const items = filter === 'all' ? products : products.filter(p => p.cat === filter);
-grid.innerHTML = items.map(p => `
 <div class="card">
-<img src="${p.img}" alt="${p.name}">
-<div class="card-body">
-<div class="card-title">${p.name}</div>
-<div class="card-desc">${p.desc}</div>
-<div class="card-footer">
-<div class="price">${p.price} €</div>
-<button class="add-btn" onclick="addToCart(${p.id})">+ დამატება</button>
+  <div><strong>კანაპეს ნაკრები Premium</strong><br><small>24 ცალი კანაპე ზღვის პროდუქტებით</small></div>
+  <div><span class="price">45 €</span> <span class="btn">+ დამატება</span></div>
 </div>
-</div>
-</div>
-`).join('');
-}
-function filterCat(cat, btn) {
-document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-btn.classList.add('active');
-renderProducts(cat);
-}
-function addToCart(id) {
-cart[id] = (cart[id] || 0) + 1;
-updateCart();
-}
-function changeQty(id, delta) {
-if (cart[id]) {
-cart[id] += delta;
-if (cart[id] <= 0) delete cart[id];
-}
-updateCart();
-}
-function updateCart() {
-let totalQty = 0;
-let totalPrice = 0;
-const container = document.getElementById('cart-items');
-container.innerHTML = '';
-Object.keys(cart).forEach(id => {
-const p = products.find(prod => prod.id == id);
-const qty = cart[id];
-totalQty += qty;
-totalPrice += p.price * qty;
-container.innerHTML += `
-<div class="cart-item">
-<div>
-<strong>${p.name}</strong><br>
-<small>${p.price} € x ${qty}</small>
 
+<div class="card">
+  <div><strong>მინი ბურგერების სეტი</strong><br><small>12 ცალი წვნიანი მინი ბურგერი</small></div>
+  <div><span class="price">35 €</span> <span class="btn">+ დამატება</span></div>
 </div>
-<div class="cart-item-controls">
-<button onclick="changeQty(${id}, -1)">-</button>
-<span style="margin: 0 5px;">${qty}</span>
-<button onclick="changeQty(${id}, 1)">+</button>
+
+<div class="checkout">
+  <h3>🛒 შეკვეთის გაფორმება</h3>
+  <p><strong>სულ ჯამი: 80 €</strong></p>
+  <input class="inp" value="გიორგი ბერიძე" readonly>
+  <input class="inp" value="+34 600 000 000" readonly>
+  <input class="inp" value="Carrer de Mallorca, 234, Barcelona" readonly>
+  <div class="wa-btn">📲 შეკვეთა WhatsApp-ით</div>
 </div>
-</div>
-`;
-});
-document.getElementById('cart-count').innerText = totalQty;
-document.getElementById('cart-total').innerText = totalPrice;
-}
-function toggleCart() {
-const m = document.getElementById('cart-modal');
-m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
-}
-function handleCheckout(e) {
-e.preventDefault();
-if (Object.keys(cart).length === 0) {
-alert('კალათა ცარიელია!');
-return;
-}
-const name = document.getElementById('cust-name').value;
-const phone = document.getElementById('cust-phone').value;
-const addr = document.getElementById('cust-address').value;
-const date = document.getElementById('event-date').value;
-const guests = document.getElementById('guest-count').value;
-const pay = document.getElementById('pay-method').value;
-let text = ` *ახალი შეკვეთა CATERING-ზე*
-`;
-text += ` *სახელი:* ${name}
-*ტელ:* ${phone}
-*მისამართი:* ${addr}
-*თარიღი:* ${date}
-*სტუმრები:* ${guests}
-*გადახდა:* ${pay}
-*შეკვეთილი პროდუქტები:*
-`;
-let total = 0;
-Object.keys(cart).forEach(id => {
-const p = products.find(prod => prod.id == id);
-text += `• ${p.name} x ${cart[id]} (${p.price * cart[id]} €)
-`;
-total += p.price * cart[id];
-});
-text += `
-*სულ ჯამი:* ${total} €`;
-const url = `https://wa.me/${MY_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-window.open(url, '_blank');
-}
-renderProducts();
-</script>
+
 </body>
 </html>
-
-Catering Premium Template — მზად არის GitHub Pages-ზე განსათავსებლად
