@@ -5,8 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Royal Taste Catering</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f8f9fa; color: #333; margin: 0; padding: 20px; }
-    .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+              url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  margin: 0;
+  padding: 20px 10px;
+}
+
+.container {
+  max-width: 650px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+    
     h1 { color: #1a252c; text-align: center; margin-bottom: 5px; }
     .subtitle { text-align: center; color: #666; margin-bottom: 25px; }
     .card { border: 1px solid #eee; padding: 15px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
@@ -68,7 +86,7 @@
   
   <div class="card">
     <div>
-      <div class="card-title">ახინკალი 5ც</div>
+      <div class="card-title">ხინკალი 5ც</div>
       <div class="card-price">10 €</div>
     </div>
     <button class="add-btn" onclick="addToCart('ხინკალი 5ც', 10)">+ დამატება</button>
