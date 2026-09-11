@@ -58,5 +58,67 @@ HTML
   <div class="wa-btn">📲 შეკვეთა WhatsApp-ით</div>
 </div>
 
+<script>
+  let cart = [];
+  let total = 0;
+
+  // 1. კალათაში დამატება
+  function addToCart(itemName, price) {
+    cart.push({ name: itemName, price: price });
+    total += price;
+    updateCartUI();
+  }
+
+  // 2. კალათის ვიზუალის განახლება
+  function updateCartUI() {
+    const cartList = document.getElementById('cart-items');
+    const totalEl = document.getElementById('cart-total');
+    
+    if(!cartList || !totalEl) return;
+
+    cartList.innerHTML = '';
+    cart.forEach((item, index) => {
+      cartList.innerHTML += `<p>• ${item.name} - <strong>${item.price} €</strong></p>`;
+    });
+
+    totalEl.innerText = total;
+  }
+
+  // 3. შეკვეთის გაგზავნა WhatsApp-ზე
+  function sendToWhatsApp() {
+    if (cart.length === 0) {
+      alert('გთხოვთ, ჯერ დაამატოთ კერძი კალათაში!');
+      return;
+    }
+
+    const name = document.getElementById('client-name').value;
+    const phone = document.getElementById('client-phone').value;
+    const address = document.getElementById('client-address').value;
+    const date = document.getElementById('event-date').value;
+
+    if (!name || !phone || !address) {
+      alert('გთხოვთ, შეავსოთ სახელი, ტელეფონი და მისამართი!');
+      return;
+    }
+
+    // შეკვეთის ტექსტის აწყობა
+    let itemsText = cart.map(i => `- ${i.name} (${i.price}€)`).join('\n');
+    let message = `Здравствуйте! ახალი შეკვეთა Royal Taste-ში:\n\n` +
+                  `📋 *შეკვეთა:*\n${itemsText}\n\n` +
+                  `💰 *სულ ჯამი:* ${total} €\n\n` +
+                  `👤 *კლიენტი:* ${name}\n` +
+                  `📞 *ტელეფონი:* ${phone}\n` +
+                  `📍 *მისამართი:* ${address}\n` +
+                  `📅 *თარიღი:* ${date}`;
+
+    // თქვენი WhatsApp ნომერი (ჩაწერეთ ქვეყნის კოდით, მაგ: 34XXXXXXXXX)
+    const myPhoneNumber = "34600000000"; 
+    
+    const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  }
+</script>
+
+  
 </body>
 </html>
