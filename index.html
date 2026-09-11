@@ -1,90 +1,104 @@
-HTML
 <!DOCTYPE html>
-<html>
+<html lang="ka">
 <head>
-
-<meta charset="UTF-8">
-<style>
-  body { font-family: Arial, sans-serif; background: #f8f9fa; margin: 0; padding: 0; }
-  .header { background: #1a252c; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
-  .logo { font-size: 20px; font-weight: bold; color: #c5a059; }
-  .cart { background: #c5a059; color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold; }
-  .hero { background: #2c3e50; color: white; text-align: center; padding: 30px 10px; }
-  .categories { text-align: center; margin: 20px 0; }
-  .tag { background: white; border: 1px solid #ccc; padding: 6px 14px; border-radius: 15px; margin: 0 2px; font-weight: bold; display: inline-block; }
-  .active { background: #c5a059; color: white; border-color: #c5a059; }
-  .card { background: white; margin: 10px auto; max-width: 500px; padding: 15px; border-radius: 8px; border: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
-  .price { font-weight: bold; font-size: 16px; color: #1a252c; }
-  .btn { background: #1a252c; color: white; padding: 6px 12px; border-radius: 5px; font-size: 12px; }
-  .checkout { background: white; border: 2px solid #c5a059; max-width: 500px; margin: 20px auto; padding: 20px; border-radius: 10px; }
-  .inp { background: #f1f1f1; border: 1px solid #ccc; padding: 8px; border-radius: 5px; width: 95%; margin-bottom: 10px; }
-  .wa-btn { background: #25D366; color: white; text-align: center; padding: 12px; font-weight: bold; border-radius: 6px; margin-top: 10px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Taste Catering</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f8f9fa; color: #333; margin: 0; padding: 20px; }
+    .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    h1 { color: #1a252c; text-align: center; margin-bottom: 5px; }
+    .subtitle { text-align: center; color: #666; margin-bottom: 25px; }
+    .card { border: 1px solid #eee; padding: 15px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+    .card-title { font-weight: bold; font-size: 16px; }
+    .card-price { color: #c5a059; font-weight: bold; }
+    .add-btn { background: #1a252c; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; }
+    .add-btn:hover { background: #c5a059; }
+    .cart-section { margin-top: 30px; border-top: 2px solid #c5a059; padding-top: 20px; }
+    .inp { width: 100%; padding: 10px; margin: 6px 0 12px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+    .wa-btn { background: #25D366; color: white; border: none; width: 100%; padding: 14px; font-weight: bold; font-size: 16px; border-radius: 6px; cursor: pointer; }
+    .wa-btn:hover { background: #1eb954; }
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="logo">LUX CATERING</div>
-  <div class="cart">🛒 კალათა (2)</div>
-</div>
+<div class="container">
+  <h1>ROYAL TASTE</h1>
+  <p class="subtitle">პრემიუმ ქეთერინგი</p>
 
-<div class="hero">
-  <h2>პრემიუმ ქეთერინგის სერვისი</h2>
-  <p>დაუკვეთეთ ფურშეტები და კანაპეები</p>
-</div>
+  <!-- მენიუს კერძები -->
+  <h3>📋 მენიუ</h3>
+  
+  <div class="card">
+    <div>
+      <div class="card-title">კანაპეს ნაკრები Premium</div>
+      <div class="card-price">45 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('კანაპეს ნაკრები Premium', 45)">+ დამატება</button>
+  </div>
 
-<div class="categories">
-  <span class="tag active">ყველა</span>
-  <span class="tag">კანაპეები</span>
-  <span class="tag">ბურგერები</span>
-</div>
+  <div class="card">
+    <div>
+      <div class="card-title">მინი ბურგერების სეტი</div>
+      <div class="card-price">35 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('მინი ბურგერების სეტი', 35)">+ დამატება</button>
+  </div>
 
-<div class="card">
-  <div><strong>კანაპეს ნაკრები Premium</strong><br><small>24 ცალი კანაპე ზღვის პროდუქტებით</small></div>
-  <div><span class="price">45 €</span> <span class="btn">+ დამატება</span></div>
-</div>
+  <div class="card">
+    <div>
+      <div class="card-title">Tapas & Jamón Box</div>
+      <div class="card-price">55 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('Tapas & Jamón Box', 55)">+ დამატება</button>
+  </div>
 
-<div class="card">
-  <div><strong>მინი ბურგერების სეტი</strong><br><small>12 ცალი წვნიანი მინი ბურგერი</small></div>
-  <div><span class="price">35 €</span> <span class="btn">+ დამატება</span></div>
-</div>
+  <!-- კალათა და შეკვეთა -->
+  <div class="cart-section">
+    <h3>🛒 კალათა</h3>
+    <div id="cart-items"><p style="color:#888;">კალათა ცარიელია</p></div>
+    <h4>სულ ჯამი: <span id="cart-total">0</span> €</h4>
 
-<div class="checkout">
-  <h3>🛒 შეკვეთის გაფორმება</h3>
-  <p><strong>სულ ჯამი: 80 €</strong></p>
-  <input class="inp" value="გიორგი ბერიძე" readonly>
-  <input class="inp" value="+34 600 000 000" readonly>
-  <input class="inp" value="Carrer de Mallorca, 234, Barcelona" readonly>
-  <div class="wa-btn">📲 შეკვეთა WhatsApp-ით</div>
+    <hr style="margin: 20px 0;">
+
+    <label>სახელი და გვარი:</label>
+    <input type="text" id="client-name" class="inp" placeholder="მაგ: გიორგი">
+
+    <label>ტელეფონის ნომერი:</label>
+    <input type="text" id="client-phone" class="inp" placeholder="მაგ: +34 600 000 000">
+
+    <label>მისამართი:</label>
+    <input type="text" id="client-address" class="inp" placeholder="ქუჩა, ნომერი, ქალაქი">
+
+    <button class="wa-btn" onclick="sendToWhatsApp()">📲 შეკვეთა WhatsApp-ით</button>
+  </div>
 </div>
 
 <script>
   let cart = [];
   let total = 0;
 
-  // 1. კალათაში დამატება
+  // 1. კერძის დამატება
   function addToCart(itemName, price) {
     cart.push({ name: itemName, price: price });
     total += price;
     updateCartUI();
   }
 
-  // 2. კალათის ვიზუალის განახლება
+  // 2. ეკრანზე განახლება
   function updateCartUI() {
     const cartList = document.getElementById('cart-items');
     const totalEl = document.getElementById('cart-total');
-    
-    if(!cartList || !totalEl) return;
 
     cartList.innerHTML = '';
-    cart.forEach((item, index) => {
+    cart.forEach((item) => {
       cartList.innerHTML += `<p>• ${item.name} - <strong>${item.price} €</strong></p>`;
     });
 
     totalEl.innerText = total;
   }
 
-  // 3. შეკვეთის გაგზავნა WhatsApp-ზე
+  // 3. WhatsApp-ზე გაგზავნა
   function sendToWhatsApp() {
     if (cart.length === 0) {
       alert('გთხოვთ, ჯერ დაამატოთ კერძი კალათაში!');
@@ -94,31 +108,27 @@ HTML
     const name = document.getElementById('client-name').value;
     const phone = document.getElementById('client-phone').value;
     const address = document.getElementById('client-address').value;
-    const date = document.getElementById('event-date').value;
 
     if (!name || !phone || !address) {
       alert('გთხოვთ, შეავსოთ სახელი, ტელეფონი და მისამართი!');
       return;
     }
 
-    // შეკვეთის ტექსტის აწყობა
     let itemsText = cart.map(i => `- ${i.name} (${i.price}€)`).join('\n');
-    let message = `Здравствуйте! ახალი შეკვეთა Royal Taste-ში:\n\n` +
+    let message = `გამარჯობა! მინდა შეკვეთის გაფორმება Royal Taste-ში:\n\n` +
                   `📋 *შეკვეთა:*\n${itemsText}\n\n` +
                   `💰 *სულ ჯამი:* ${total} €\n\n` +
-                  `👤 *კლიენტი:* ${name}\n` +
+                  `👤 *სახელი:* ${name}\n` +
                   `📞 *ტელეფონი:* ${phone}\n` +
-                  `📍 *მისამართი:* ${address}\n` +
-                  `📅 *თარიღი:* ${date}`;
+                  `📍 *მისამართი:* ${address}`;
 
-    // თქვენი WhatsApp ნომერი (ჩაწერეთ ქვეყნის კოდით, მაგ: 34XXXXXXXXX)
+    // შეცვალეთ ეს ნომერი თქვენი რეალური WhatsApp ნომრით (ქვეყნის კოდით, მაგ: 34XXXXXXXXX)
     const myPhoneNumber = "34600000000"; 
-    
+
     const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   }
 </script>
 
-  
 </body>
 </html>
