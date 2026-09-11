@@ -107,22 +107,28 @@
     <label>მისამართი:</label>
     <input type="text" id="client-address" class="inp" placeholder="ქუჩა, ნომერი, ქალაქი, პოსტკოდი">
 
-    <!-- PAYMENT METHOD SECTION -->
-<div style="background: #f1f5f9; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #cbd5e1;">
-  <h4 style="margin-top:0; color:#1a252c;">💳 გადახდის მეთოდი</h4>
+    <!-- PAYMENT BUTTONS SECTION -->
+<div style="background: #ffffff; padding: 20px; border-radius: 10px; margin: 20px 0; border: 1px solid #e2e8f0; text-align: center;">
+  <h4 style="margin-top:0; color:#1a252c; font-size: 16px;">💳 აირჩიეთ გადახდის მეთოდი</h4>
   
-  <p style="font-size: 14px; margin-bottom: 5px;"><strong>1. გადახდა Bizum-ით (ყველაზე სწრაფი):</strong></p>
-  <p style="font-size: 14px; color: #2563eb; font-weight: bold; margin-top: 0;">📱 ტელეფონი: +34 603 688 449</p>
-  
-  <hr style="border: 0.5px solid #ddd; margin: 10px 0;">
+  <!-- 1. Bizum-ით გადახდის ღილაკი -->
+  <a href="https://wa.me/34603688449?text=გამარჯობა,%20მინდა%20Bizum-ით%20გადახდის%20რეკვიზიტების%20მიღება" 
+     target="_blank" 
+     style="display: block; background: #00a896; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-bottom: 10px; font-size: 14px;">
+     📱 გადაიხადე Bizum-ით
+  </a>
 
-  <p style="font-size: 14px; margin-bottom: 5px;"><strong>2. საბანკო გადარიცხვა (IBAN):</strong></p>
-  <p style="font-size: 13px; font-family: monospace; background: white; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
-    ES48 0049 0531 5829 1056 2307
+  <!-- 2. ბარათით / Stripe-ით გადახდის ღილაკი -->
+  <a href="https://buy.stripe.com/YOUR_STRIPE_LINK" 
+     target="_blank" 
+     style="display: block; background: #635bff; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px;">
+     💳 გადაიხადე საბანკო ბარათით (Visa / Mastercard)
+  </a>
+  
+  <p style="font-size: 11px; color: #888; margin-top: 10px;">
+    🔒 გადახდა დაცულია უსაფრთხო საბანკო სისტემით
   </p>
-  <small style="color: #666;">მიმღები: Royal Taste Catering</small>
 </div>
-    // PAYMENT METHOD END
 
     <button class="wa-btn" onclick="sendToWhatsApp()">📲 შეკვეთა WhatsApp-ით</button>
   </div>
