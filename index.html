@@ -115,15 +115,15 @@
     }
 
     let itemsText = cart.map(i => `- ${i.name} (${i.price}€)`).join('\n');
-    let message = `გამარჯობა! მინდა შეკვეთის გაფორმება Royal Taste-ში:\n\n` +
+    let message = `გამარჯობა! ახალი შეკვეთა Royal Taste-ში:\n\n` +
                   `📋 *შეკვეთა:*\n${itemsText}\n\n` +
                   `💰 *სულ ჯამი:* ${total} €\n\n` +
                   `👤 *სახელი:* ${name}\n` +
                   `📞 *ტელეფონი:* ${phone}\n` +
                   `📍 *მისამართი:* ${address}`;
 
-    // შეცვალეთ ეს ნომერი თქვენი რეალური WhatsApp ნომრით (ქვეყნის კოდით, მაგ: 34XXXXXXXXX)
-    const myPhoneNumber = "603688449"; 
+    // თქვენი ნომერი ჩასმულია: +34 603 688 449
+    const myPhoneNumber = "34603688449"; 
 
     const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
