@@ -6,147 +6,273 @@
   <title>Royal Taste Catering</title>
   <style>
     body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
-              url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-  background-size: cover;
-  color: #333;
-  margin: 0;
-  padding: 20px 10px;
-}
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                  url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      margin: 0;
+      padding: 20px 10px;
+    }
 
-.container {
-  max-width: 650px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.96);
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
-}
+    .container {
+      max-width: 650px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.96);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+    }
+
+    .card {
+      border: 1px solid #eee;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .card-title { font-weight: bold; font-size: 16px; color: #1a252c; }
+    .card-price { color: #c5a059; font-weight: bold; margin-top: 4px; }
     
-    h1 { color: #1a252c; text-align: center; margin-bottom: 5px; }
-    .subtitle { text-align: center; color: #666; margin-bottom: 25px; }
-    .card { border: 1px solid #eee; padding: 15px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
-    .card-title { font-weight: bold; font-size: 16px; }
-    .card-price { color: #c5a059; font-weight: bold; }
-    .add-btn { background: #1a252c; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; }
+    .add-btn {
+      background: #1a252c;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
     .add-btn:hover { background: #c5a059; }
-    .cart-section { margin-top: 30px; border-top: 2px solid #c5a059; padding-top: 20px; }
-    .inp { width: 100%; padding: 10px; margin: 6px 0 12px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-    .wa-btn { background: #25D366; color: white; border: none; width: 100%; padding: 14px; font-weight: bold; font-size: 16px; border-radius: 6px; cursor: pointer; }
+
+    .cart-section {
+      margin-top: 30px;
+      border-top: 2px solid #c5a059;
+      padding-top: 20px;
+    }
+
+    .inp {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .wa-btn {
+      background: #25D366;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 14px;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
     .wa-btn:hover { background: #1eb954; }
   </style>
 </head>
 <body>
 
 <div class="container">
-<!-- ROYAL TASTE HEADER BANNER START -->
-<div style="background: linear-gradient(135deg, #111a21 0%, #1a252c 50%, #0d1318 100%); padding: 35px 20px; text-align: center; border-radius: 12px; border: 1px solid #c5a059; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 25px; position: relative; overflow: hidden;">
-  
-  <!-- დეკორატიული ფონის ელემენტები -->
-  <div style="position: absolute; top: -20px; left: -20px; width: 80px; height: 80px; border-top: 2px solid #c5a059; border-left: 2px solid #c5a059; opacity: 0.5;"></div>
-  <div style="position: absolute; bottom: -20px; right: -20px; width: 80px; height: 80px; border-bottom: 2px solid #c5a059; border-right: 2px solid #c5a059; opacity: 0.5;"></div>
 
-  <!-- გვირგვინის ლოგო (SVG) -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" width="60" height="30" style="margin-bottom: 5px;">
-    <defs>
-      <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#D4AF37" />
-        <stop offset="50%" stop-color="#FFF2A3" />
-        <stop offset="100%" stop-color="#AA771C" />
-      </linearGradient>
-    </defs>
-    <path d="M 10 40 L 25 15 L 38 30 L 50 8 L 62 30 L 75 15 L 90 40 Z" fill="url(#gold)" />
-    <circle cx="25" cy="12" r="3" fill="url(#gold)" />
-    <circle cx="50" cy="5" r="4" fill="url(#gold)" />
-    <circle cx="75" cy="12" r="3" fill="url(#gold)" />
-    <rect x="10" y="43" width="80" height="5" rx="2" fill="url(#gold)" />
-  </svg>
+  <!-- ROYAL TASTE HEADER BANNER -->
+  <div style="background: linear-gradient(135deg, #111a21 0%, #1a252c 50%, #0d1318 100%); padding: 35px 20px; text-align: center; border-radius: 12px; border: 1px solid #c5a059; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 25px; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -20px; left: -20px; width: 80px; height: 80px; border-top: 2px solid #c5a059; border-left: 2px solid #c5a059; opacity: 0.5;"></div>
+    <div style="position: absolute; bottom: -20px; right: -20px; width: 80px; height: 80px; border-bottom: 2px solid #c5a059; border-right: 2px solid #c5a059; opacity: 0.5;"></div>
 
-  <!-- მთავარი სათაური -->
-  <h1 style="color: #D4AF37; font-family: 'Georgia', serif; font-size: 32px; font-weight: bold; letter-spacing: 4px; margin: 5px 0 0 0; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-    ROYAL TASTE
-  </h1>
-  
-  <!-- ქვესათაური -->
-  <div style="display: flex; align-items: center; justify-content: center; margin-top: 8px;">
-    <span style="height: 1px; width: 30px; background: #c5a059; opacity: 0.6;"></span>
-    <p style="color: #e0e0e0; font-family: Arial, sans-serif; font-size: 13px; letter-spacing: 3px; margin: 0 12px; text-transform: uppercase; font-weight: 300;">
-      საუკეთესო გემო
-    </p>
-    <span style="height: 1px; width: 30px; background: #c5a059; opacity: 0.6;"></span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" width="60" height="30" style="margin-bottom: 5px;">
+      <defs>
+        <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#D4AF37" />
+          <stop offset="50%" stop-color="#FFF2A3" />
+          <stop offset="100%" stop-color="#AA771C" />
+        </linearGradient>
+      </defs>
+      <path d="M 10 40 L 25 15 L 38 30 L 50 8 L 62 30 L 75 15 L 90 40 Z" fill="url(#gold)" />
+      <circle cx="25" cy="12" r="3" fill="url(#gold)" />
+      <circle cx="50" cy="5" r="4" fill="url(#gold)" />
+      <circle cx="75" cy="12" r="3" fill="url(#gold)" />
+      <rect x="10" y="43" width="80" height="5" rx="2" fill="url(#gold)" />
+    </svg>
+
+    <h1 style="color: #D4AF37; font-family: 'Georgia', serif; font-size: 32px; font-weight: bold; letter-spacing: 4px; margin: 5px 0 0 0; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+      ROYAL TASTE
+    </h1>
+    
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: 8px;">
+      <span style="height: 1px; width: 30px; background: #c5a059; opacity: 0.6;"></span>
+      <p style="color: #e0e0e0; font-family: Arial, sans-serif; font-size: 13px; letter-spacing: 3px; margin: 0 12px; text-transform: uppercase; font-weight: 300;">
+        Catering & Georgian Cuisine
+      </p>
+      <span style="height: 1px; width: 30px; background: #c5a059; opacity: 0.6;"></span>
+    </div>
   </div>
 
-</div>
-<!-- ROYAL TASTE HEADER BANNER END -->
-
-  <!-- მენიუს კერძები -->
-  <h3>📋 მენიუ</h3>
+  <!-- 15 GEORGIAN DISHES MENU -->
+  <h3 style="color: #1a252c; border-bottom: 2px solid #c5a059; padding-bottom: 8px;">🇬🇪 ქართული მენიუ</h3>
   
   <div class="card">
     <div>
-      <div class="card-title">ხინკალი 5ც</div>
+      <div class="card-title">1. ხინკალი (ქალაქური / მთიულური) - 10ც</div>
+      <div class="card-price">12 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('ხინკალი (10ც)', 12)">+ დამატება</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="card-title">2. აჭარული ხაჭაპური</div>
       <div class="card-price">10 €</div>
     </div>
-    <button class="add-btn" onclick="addToCart('ხინკალი 5ც', 10)">+ დამატება</button>
+    <button class="add-btn" onclick="addToCart('აჭარული ხაჭაპური', 10)">+ დამატება</button>
   </div>
 
   <div class="card">
     <div>
-      <div class="card-title">ხაჭაპური</div>
-      <div class="card-price">10 €</div>
+      <div class="card-title">3. იმერული ხაჭაპური</div>
+      <div class="card-price">9 €</div>
     </div>
-    <button class="add-btn" onclick="addToCart('ხაჭაპური', 10)">+ დამატება</button>
+    <button class="add-btn" onclick="addToCart('იმერული ხაჭაპური', 9)">+ დამატება</button>
   </div>
 
   <div class="card">
     <div>
-      <div class="card-title">აჭარული ხაჭაპური</div>
+      <div class="card-title">4. მეგრული ხაჭაპური</div>
+      <div class="card-price">11 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('მეგრული ხაჭაპური', 11)">+ დამატება</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="card-title">5. ღორის მწვადი (ტყემლით)</div>
+      <div class="card-price">14 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('ღორის მწვადი', 14)">+ დამატება</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="card-title">6. ქათმის შქმერული</div>
       <div class="card-price">15 €</div>
     </div>
-    <button class="add-btn" onclick="addToCart('აჭარული ხაჭაპური', 15)">+ დამატება</button>
+    <button class="add-btn" onclick="addToCart('ქათმის შქმერული', 15)">+ დამატება</button>
   </div>
 
-  <!-- კალათა და შეკვეთა -->
+  <div class="card">
+    <div>
+      <div class="card-title">7. საცივი (ქათმის / ინდაურის)</div>
+      <div class="card-price">16 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('საცივი', 16)">+ დამატება</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="card-title">8. ჩახოხბილი</div>
+      <div class="card-price">12 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('ჩახოხბილი', 12)">+ დამატება</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="card-title">9. ოდჯახური ღორის ხორცით</div>
+      <div class="card-price">13 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('ოდჯახური', 13)">+ დამატება</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="card-title">10. ჩაშუშული (საქონლის ხორცით)</div>
+      <div class="card-price">14 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('ჩაშუშული', 14)">+ დამატება</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="card-title">11. ფხალის ასორტი (ბადრიჯანი, ისპანახი, ჭარხალი)</div>
+      <div class="card-price">10 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('ფხალის ასორტი', 10)">+ დამატება</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="card-title">12. ბადრიჯანი ნიგვზით</div>
+      <div class="card-price">8 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('ბადრიჯანი ნიგვზით', 8)">+ დამატება</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="card-title">13. ლობიანი (ქოთნის ლობიო მჭადით)</div>
+      <div class="card-price">8 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('ლობიანი', 8)">+ დამატება</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="card-title">14. ქაბაბი (ყველით / ერბოთი)</div>
+      <div class="card-price">11 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('ქაბაბი', 11)">+ დამატება</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="card-title">15. კუბდარი (სვანური)</div>
+      <div class="card-price">12 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('კუბდარი', 12)">+ დამატება</button>
+  </div>
+
+  <!-- CART & CHECKOUT -->
   <div class="cart-section">
-    <h3>🛒 კალათა</h3>
+    <h3 style="color: #1a252c;">🛒 კალათა</h3>
     <div id="cart-items"><p style="color:#888;">კალათა ცარიელია</p></div>
     <h4>სულ ჯამი: <span id="cart-total">0</span> €</h4>
 
-    <hr style="margin: 20px 0;">
+    <hr style="margin: 20px 0; border: 0.5px solid #eee;">
 
-    <label>სახელი და გვარი:</label>
+    <label><strong>სახელი და გვარი:</strong></label>
     <input type="text" id="client-name" class="inp" placeholder="მაგ: გიორგი">
 
-    <label>ტელეფონის ნომერი:</label>
+    <label><strong>ტელეფონის ნომერი:</strong></label>
     <input type="text" id="client-phone" class="inp" placeholder="მაგ: +34 600 000 000">
 
-    <label>მისამართი:</label>
-    <input type="text" id="client-address" class="inp" placeholder="ქუჩა, ნომერი, ქალაქი, პოსტკოდი">
+    <label><strong>მისამართი:</strong></label>
+    <input type="text" id="client-address" class="inp" placeholder="ქუჩა, ნომერი, ქალაქი">
 
-    <!-- PAYMENT BUTTONS SECTION -->
-<div style="background: #ffffff; padding: 20px; border-radius: 10px; margin: 20px 0; border: 1px solid #e2e8f0; text-align: center;">
-  <h4 style="margin-top:0; color:#1a252c; font-size: 16px;">💳 აირჩიეთ გადახდის მეთოდი</h4>
-  
-  <!-- 1. Bizum-ით გადახდის ღილაკი -->
-  <a href="https://wa.me/34603688449?text=გამარჯობა,%20მინდა%20Bizum-ით%20გადახდის%20რეკვიზიტების%20მიღება" 
-     target="_blank" 
-     style="display: block; background: #00a896; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-bottom: 10px; font-size: 14px;">
-     📱 გადაიხადე Bizum-ით
-  </a>
+    <!-- PAYMENT BUTTONS -->
+    <div style="background: #ffffff; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #e2e8f0; text-align: center;">
+      <h4 style="margin-top:0; color:#1a252c; font-size: 15px;">💳 გადახდის მეთოდი</h4>
+      
+      <a href="https://wa.me/34603688449?text=გამარჯობა,%20მინდა%20Bizum-ით%20გადახდა" 
+         target="_blank" 
+         style="display: block; background: #00a896; color: white; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-bottom: 8px; font-size: 14px;">
+         📱 გადაიხადე Bizum-ით
+      </a>
 
-  <!-- 2. ბარათით / Stripe-ით გადახდის ღილაკი -->
-  <a href="https://buy.stripe.com/YOUR_STRIPE_LINK" 
-     target="_blank" 
-     style="display: block; background: #635bff; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px;">
-     💳 გადაიხადე საბანკო ბარათით (Visa / Mastercard)
-  </a>
-  
-  <p style="font-size: 11px; color: #888; margin-top: 10px;">
-    🔒 გადახდა დაცულია უსაფრთხო საბანკო სისტემით
-  </p>
-</div>
+      <a href="https://wa.me/34603688449?text=გამარჯობა,%20მინდა%20საბანკო%20ბარათით%20გადახდის%20ლინკი" 
+         target="_blank" 
+         style="display: block; background: #635bff; color: white; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px;">
+         💳 გადაიხადე საბანკო ბარათით (Visa / Mastercard)
+      </a>
+    </div>
 
     <button class="wa-btn" onclick="sendToWhatsApp()">📲 შეკვეთა WhatsApp-ით</button>
   </div>
@@ -155,7 +281,7 @@
 <script>
   let cart = [];
 
-  // 1. პროდუქტის დამატება კალათაში (ან რაოდენობის გაზრდა)
+  // 1. კალათაში დამატება / გაზრდა
   function addToCart(itemName, price) {
     const existingItem = cart.find(item => item.name === itemName);
     if (existingItem) {
@@ -166,7 +292,7 @@
     updateCartUI();
   }
 
-  // 2. რაოდენობის შემცირება (ან წაშლა, თუ 1-მდე ჩამოვიდა)
+  // 2. შემცირება / ამოშლა
   function removeFromCart(itemName) {
     const existingItemIndex = cart.findIndex(item => item.name === itemName);
     if (existingItemIndex !== -1) {
