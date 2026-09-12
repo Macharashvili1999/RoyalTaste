@@ -153,30 +153,70 @@
 </div>
 
 <script>
+ <script>
   let cart = [];
-  let total = 0;
 
-  // 1. კერძის დამატება
+  // 1. პროდუქტის დამატება კალათაში (ან რაოდენობის გაზრდა)
   function addToCart(itemName, price) {
-    cart.push({ name: itemName, price: price });
-    total += price;
+    const existingItem = cart.find(item => item.name === itemName);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ name: itemName, price: price, quantity: 1 });
+    }
     updateCartUI();
   }
 
-  // 2. ეკრანზე განახლება
+  // 2. რაოდენობის შემცირება (ან წაშლა, თუ 1-მდე ჩამოვიდა)
+  function removeFromCart(itemName) {
+    const existingItemIndex = cart.findIndex(item => item.name === itemName);
+    if (existingItemIndex !== -1) {
+      if (cart[existingItemIndex].quantity > 1) {
+        cart[existingItemIndex].quantity -= 1;
+      } else {
+        cart.splice(existingItemIndex, 1);
+      }
+    }
+    updateCartUI();
+  }
+
+  // 3. კალათის ვიზუალის განახლება
   function updateCartUI() {
     const cartList = document.getElementById('cart-items');
     const totalEl = document.getElementById('cart-total');
 
+    if (cart.length === 0) {
+      cartList.innerHTML = '<p style="color:#888;">კალათა ცარიელია</p>';
+      totalEl.innerText = 0;
+      return;
+    }
+
     cartList.innerHTML = '';
+    let total = 0;
+
     cart.forEach((item) => {
-      cartList.innerHTML += `<p>• ${item.name} - <strong>${item.price} €</strong></p>`;
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+
+      cartList.innerHTML += `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; background: #f8f9fa; padding: 8px 12px; border-radius: 6px;">
+          <div>
+            <strong>${item.name}</strong><br>
+            <small>${item.price} € × ${item.quantity} = ${itemTotal} €</small>
+          </div>
+          <div>
+            <button onclick="removeFromCart('${item.name}')" style="background: #e11d48; color: white; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-weight: bold;">-</button>
+            <span style="margin: 0 8px; font-weight: bold;">${item.quantity}</span>
+            <button onclick="addToCart('${item.name}', ${item.price})" style="background: #16a34a; color: white; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-weight: bold;">+</button>
+          </div>
+        </div>
+      `;
     });
 
     totalEl.innerText = total;
   }
 
-  // 3. WhatsApp-ზე გაგზავნა
+  // 4. შეკვეთის გაგზავნა WhatsApp-ზე
   function sendToWhatsApp() {
     if (cart.length === 0) {
       alert('გთხოვთ, ჯერ დაამატოთ კერძი კალათაში!');
@@ -192,7 +232,9 @@
       return;
     }
 
-    let itemsText = cart.map(i => `- ${i.name} (${i.price}€)`).join('\n');
+    let itemsText = cart.map(i => `- ${i.name} (${i.quantity}x) — ${i.price * i.quantity}€`).join('\n');
+    let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
     let message = `გამარჯობა! ახალი შეკვეთა Royal Taste-ში:\n\n` +
                   `📋 *შეკვეთა:*\n${itemsText}\n\n` +
                   `💰 *სულ ჯამი:* ${total} €\n\n` +
@@ -200,12 +242,11 @@
                   `📞 *ტელეფონი:* ${phone}\n` +
                   `📍 *მისამართი:* ${address}`;
 
-    // თქვენი ნომერი ჩასმულია: +34 603 688 449
     const myPhoneNumber = "34603688449"; 
-
     const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   }
+</script>
 </script>
 
 </body>
