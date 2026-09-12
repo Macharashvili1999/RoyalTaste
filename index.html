@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+      background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), 
                   url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #333;
@@ -16,29 +16,55 @@
     }
 
     .container {
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 255, 255, 0.97);
       padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
       backdrop-filter: blur(5px);
+    }
+
+    .notice-box {
+      background: #fffbe6;
+      border: 1px solid #ffe58f;
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #856404;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title {
+      color: #1a252c;
+      border-bottom: 2px solid #c5a059;
+      padding-bottom: 6px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .card {
       border: 1px solid #eee;
-      padding: 15px;
-      border-radius: 8px;
+      padding: 14px;
+      border-radius: 10px;
       margin-bottom: 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+      transition: transform 0.1s;
     }
 
-    .card-title { font-weight: bold; font-size: 16px; color: #1a252c; }
-    .card-price { color: #c5a059; font-weight: bold; margin-top: 4px; }
+    .card-title { font-weight: bold; font-size: 15px; color: #1a252c; }
+    .card-desc { font-size: 12px; color: #666; margin-top: 2px; }
+    .card-tags { font-size: 11px; margin-top: 4px; }
+    .card-price { color: #c5a059; font-weight: bold; font-size: 15px; margin-top: 4px; }
     
     .add-btn {
       background: #1a252c;
@@ -48,8 +74,14 @@
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
+      white-space: nowrap;
     }
     .add-btn:hover { background: #c5a059; }
+
+    .bundle-card {
+      background: #fdfbf7;
+      border: 1.5px solid #c5a059;
+    }
 
     .cart-section {
       margin-top: 30px;
@@ -85,11 +117,8 @@
 <div class="container">
 
   <!-- ROYAL TASTE HEADER BANNER -->
-  <div style="background: linear-gradient(135deg, #111a21 0%, #1a252c 50%, #0d1318 100%); padding: 35px 20px; text-align: center; border-radius: 12px; border: 1px solid #c5a059; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 25px; position: relative; overflow: hidden;">
-    <div style="position: absolute; top: -20px; left: -20px; width: 80px; height: 80px; border-top: 2px solid #c5a059; border-left: 2px solid #c5a059; opacity: 0.5;"></div>
-    <div style="position: absolute; bottom: -20px; right: -20px; width: 80px; height: 80px; border-bottom: 2px solid #c5a059; border-right: 2px solid #c5a059; opacity: 0.5;"></div>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" width="60" height="30" style="margin-bottom: 5px;">
+  <div style="background: linear-gradient(135deg, #111a21 0%, #1a252c 50%, #0d1318 100%); padding: 30px 20px; text-align: center; border-radius: 12px; border: 1px solid #c5a059; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; position: relative; overflow: hidden;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" width="55" height="28" style="margin-bottom: 5px;">
       <defs>
         <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#D4AF37" />
@@ -104,25 +133,64 @@
       <rect x="10" y="43" width="80" height="5" rx="2" fill="url(#gold)" />
     </svg>
 
-    <h1 style="color: #D4AF37; font-family: 'Georgia', serif; font-size: 32px; font-weight: bold; letter-spacing: 4px; margin: 5px 0 0 0; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+    <h1 style="color: #D4AF37; font-family: 'Georgia', serif; font-size: 30px; font-weight: bold; letter-spacing: 4px; margin: 3px 0 0 0; text-transform: uppercase;">
       ROYAL TASTE
     </h1>
     
-    <div style="display: flex; align-items: center; justify-content: center; margin-top: 8px;">
-      <span style="height: 1px; width: 30px; background: #c5a059; opacity: 0.6;"></span>
-      <p style="color: #e0e0e0; font-family: Arial, sans-serif; font-size: 13px; letter-spacing: 3px; margin: 0 12px; text-transform: uppercase; font-weight: 300;">
-        Catering & Georgian Cuisine
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: 6px;">
+      <span style="height: 1px; width: 25px; background: #c5a059; opacity: 0.6;"></span>
+      <p style="color: #e0e0e0; font-family: Arial, sans-serif; font-size: 12px; letter-spacing: 2px; margin: 0 10px; text-transform: uppercase;">
+        Premium Catering & Events
       </p>
-      <span style="height: 1px; width: 30px; background: #c5a059; opacity: 0.6;"></span>
+      <span style="height: 1px; width: 25px; background: #c5a059; opacity: 0.6;"></span>
     </div>
   </div>
 
-  <!-- 15 GEORGIAN DISHES MENU -->
-  <h3 style="color: #1a252c; border-bottom: 2px solid #c5a059; padding-bottom: 8px;">🇬🇪 ქართული მენიუ</h3>
+  <!-- NOTICE BOX -->
+  <div class="notice-box">
+    <span style="font-size: 18px;">🕒</span>
+    <div>
+      <strong>შეკვეთის პირობები:</strong> ქეთერინგის შეკვეთები მიიღება სულ მცირე <strong>24-48 საათით ადრე</strong>. მინიმალური შეკვეთა — <strong>100 €</strong>.
+    </div>
+  </div>
+
+  <!-- BUNDLES / SETS -->
+  <h3 class="section-title">⭐ მზა სეტები (ღონისძიებებისთვის)</h3>
+
+  <div class="card bundle-card">
+    <div>
+      <div class="card-title">👑 "Supra Mini" Box (4-6 პერსონაზე)</div>
+      <div class="card-desc">იმერული ხაჭაპური, ღორის მწვადი, ბადრიჯანი ნიგვზით, ფხალის ასორტი, შქმერული.</div>
+      <div class="card-price">85 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('Supra Mini Box', 85)">+ დამატება</button>
+  </div>
+
+  <div class="card bundle-card">
+    <div>
+      <div class="card-title">👑 "Royal Feast" Set (8-12 პერსონაზე)</div>
+      <div class="card-desc">მეგრული ხაჭაპური (2ც), მწვადის ასორტი, საცივი, ხინკალი (20ც), კუბდარი, ფხალის ასორტი.</div>
+      <div class="card-price">165 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('Royal Feast Set', 165)">+ დამატება</button>
+  </div>
+
+  <div class="card bundle-card">
+    <div>
+      <div class="card-title">👑 "Party Finger-Food" Box (10 პერსონაზე)</div>
+      <div class="card-desc">მინი ჭვიშტარი, ბადრიჯნის რულეტები, ქაბაბის ნაკრები, მინი ხაჭაპურები.</div>
+      <div class="card-price">120 €</div>
+    </div>
+    <button class="add-btn" onclick="addToCart('Party Finger-Food Box', 120)">+ დამატება</button>
+  </div>
+
+  <!-- INDIVIDUAL DISHES -->
+  <h3 class="section-title">🇬🇪 ცალკეული კერძები</h3>
   
   <div class="card">
     <div>
-      <div class="card-title">1. ხინკალი (ქალაქური / მთიულური) - 10ც</div>
+      <div class="card-title">1. ხინკალი (10 ცალი)</div>
+      <div class="card-tags">🥩 ხორცი (ქალაქური / მთიულური)</div>
       <div class="card-price">12 €</div>
     </div>
     <button class="add-btn" onclick="addToCart('ხინკალი (10ც)', 12)">+ დამატება</button>
@@ -131,6 +199,7 @@
   <div class="card">
     <div>
       <div class="card-title">2. აჭარული ხაჭაპური</div>
+      <div class="card-tags">🧀 ყველი, 🥚 კვერცხი, 🧈 კარაქი</div>
       <div class="card-price">10 €</div>
     </div>
     <button class="add-btn" onclick="addToCart('აჭარული ხაჭაპური', 10)">+ დამატება</button>
@@ -139,6 +208,7 @@
   <div class="card">
     <div>
       <div class="card-title">3. იმერული ხაჭაპური</div>
+      <div class="card-tags">🧀 ჭყინტი ყველი</div>
       <div class="card-price">9 €</div>
     </div>
     <button class="add-btn" onclick="addToCart('იმერული ხაჭაპური', 9)">+ დამატება</button>
@@ -147,6 +217,7 @@
   <div class="card">
     <div>
       <div class="card-title">4. მეგრული ხაჭაპური</div>
+      <div class="card-tags">🧀 ორმაგი ყველით</div>
       <div class="card-price">11 €</div>
     </div>
     <button class="add-btn" onclick="addToCart('მეგრული ხაჭაპური', 11)">+ დამატება</button>
@@ -155,6 +226,7 @@
   <div class="card">
     <div>
       <div class="card-title">5. ღორის მწვადი (ტყემლით)</div>
+      <div class="card-tags">🥩 400გრ + ხახვი და მწვანილი</div>
       <div class="card-price">14 €</div>
     </div>
     <button class="add-btn" onclick="addToCart('ღორის მწვადი', 14)">+ დამატება</button>
@@ -163,6 +235,7 @@
   <div class="card">
     <div>
       <div class="card-title">6. ქათმის შქმერული</div>
+      <div class="card-tags">🍗 ქათამი ნივრიან სოუსში</div>
       <div class="card-price">15 €</div>
     </div>
     <button class="add-btn" onclick="addToCart('ქათმის შქმერული', 15)">+ დამატება</button>
@@ -170,7 +243,8 @@
 
   <div class="card">
     <div>
-      <div class="card-title">7. საცივი (ქათმის / ინდაურის)</div>
+      <div class="card-title">7. საცივი (ქათმის)</div>
+      <div class="card-tags">🥜 ნიგვზის სოუსი, სუნელები</div>
       <div class="card-price">16 €</div>
     </div>
     <button class="add-btn" onclick="addToCart('საცივი', 16)">+ დამატება</button>
@@ -178,39 +252,8 @@
 
   <div class="card">
     <div>
-      <div class="card-title">8. ჩახოხბილი</div>
-      <div class="card-price">12 €</div>
-    </div>
-    <button class="add-btn" onclick="addToCart('ჩახოხბილი', 12)">+ დამატება</button>
-  </div>
-
-  <div class="card">
-    <div>
-      <div class="card-title">9. ოდჯახური ღორის ხორცით</div>
-      <div class="card-price">13 €</div>
-    </div>
-    <button class="add-btn" onclick="addToCart('ოდჯახური', 13)">+ დამატება</button>
-  </div>
-
-  <div class="card">
-    <div>
-      <div class="card-title">10. ჩაშუშული (საქონლის ხორცით)</div>
-      <div class="card-price">14 €</div>
-    </div>
-    <button class="add-btn" onclick="addToCart('ჩაშუშული', 14)">+ დამატება</button>
-  </div>
-
-  <div class="card">
-    <div>
-      <div class="card-title">11. ფხალის ასორტი (ბადრიჯანი, ისპანახი, ჭარხალი)</div>
-      <div class="card-price">10 €</div>
-    </div>
-    <button class="add-btn" onclick="addToCart('ფხალის ასორტი', 10)">+ დამატება</button>
-  </div>
-
-  <div class="card">
-    <div>
-      <div class="card-title">12. ბადრიჯანი ნიგვზით</div>
+      <div class="card-title">8. ბადრიჯანი ნიგვზით</div>
+      <div class="card-tags">🟢 ვეგეტარიანული, 🥜 ნიგოზი</div>
       <div class="card-price">8 €</div>
     </div>
     <button class="add-btn" onclick="addToCart('ბადრიჯანი ნიგვზით', 8)">+ დამატება</button>
@@ -218,23 +261,17 @@
 
   <div class="card">
     <div>
-      <div class="card-title">13. ლობიანი (ქოთნის ლობიო მჭადით)</div>
-      <div class="card-price">8 €</div>
+      <div class="card-title">9. ფხალის ასორტი</div>
+      <div class="card-tags">🟢 ვეგეტარიანული (ისპანახი, ჭარხალი)</div>
+      <div class="card-price">10 €</div>
     </div>
-    <button class="add-btn" onclick="addToCart('ლობიანი', 8)">+ დამატება</button>
+    <button class="add-btn" onclick="addToCart('ფხალის ასორტი', 10)">+ დამატება</button>
   </div>
 
   <div class="card">
     <div>
-      <div class="card-title">14. ქაბაბი (ყველით / ერბოთი)</div>
-      <div class="card-price">11 €</div>
-    </div>
-    <button class="add-btn" onclick="addToCart('ქაბაბი', 11)">+ დამატება</button>
-  </div>
-
-  <div class="card">
-    <div>
-      <div class="card-title">15. კუბდარი (სვანური)</div>
+      <div class="card-title">10. კუბდარი (სვანური)</div>
+      <div class="card-tags">🥩 ჭრილი ხორცი, გიცრული</div>
       <div class="card-price">12 €</div>
     </div>
     <button class="add-btn" onclick="addToCart('კუბდარი', 12)">+ დამატება</button>
@@ -244,7 +281,11 @@
   <div class="cart-section">
     <h3 style="color: #1a252c;">🛒 კალათა</h3>
     <div id="cart-items"><p style="color:#888;">კალათა ცარიელია</p></div>
-    <h4>სულ ჯამი: <span id="cart-total">0</span> €</h4>
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+      <h4>სულ ჯამი: <span id="cart-total">0</span> €</h4>
+      <small style="color: #e11d48; font-weight: bold;" id="min-warning">(მინ. შეკვეთა 100€)</small>
+    </div>
 
     <hr style="margin: 20px 0; border: 0.5px solid #eee;">
 
@@ -254,8 +295,8 @@
     <label><strong>ტელეფონის ნომერი:</strong></label>
     <input type="text" id="client-phone" class="inp" placeholder="მაგ: +34 600 000 000">
 
-    <label><strong>მისამართი:</strong></label>
-    <input type="text" id="client-address" class="inp" placeholder="ქუჩა, ნომერი, ქალაქი">
+    <label><strong>მისამართი & ღონისძიების თარიღი:</strong></label>
+    <input type="text" id="client-address" class="inp" placeholder="მისამართი, თარიღი და დრო">
 
     <!-- PAYMENT BUTTONS -->
     <div style="background: #ffffff; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #e2e8f0; text-align: center;">
@@ -280,8 +321,8 @@
 
 <script>
   let cart = [];
+  const MIN_ORDER = 100; // მინიმალური შეკვეთა 100 ევრო
 
-  // 1. კალათაში დამატება / გაზრდა
   function addToCart(itemName, price) {
     const existingItem = cart.find(item => item.name === itemName);
     if (existingItem) {
@@ -292,7 +333,6 @@
     updateCartUI();
   }
 
-  // 2. შემცირება / ამოშლა
   function removeFromCart(itemName) {
     const existingItemIndex = cart.findIndex(item => item.name === itemName);
     if (existingItemIndex !== -1) {
@@ -305,14 +345,15 @@
     updateCartUI();
   }
 
-  // 3. კალათის ვიზუალის განახლება
   function updateCartUI() {
     const cartList = document.getElementById('cart-items');
     const totalEl = document.getElementById('cart-total');
+    const warningEl = document.getElementById('min-warning');
 
     if (cart.length === 0) {
       cartList.innerHTML = '<p style="color:#888;">კალათა ცარიელია</p>';
       totalEl.innerText = 0;
+      warningEl.style.display = 'inline';
       return;
     }
 
@@ -339,12 +380,24 @@
     });
 
     totalEl.innerText = total;
+
+    if (total >= MIN_ORDER) {
+      warningEl.style.display = 'none';
+    } else {
+      warningEl.style.display = 'inline';
+    }
   }
 
-  // 4. შეკვეთის გაგზავნა WhatsApp-ზე
   function sendToWhatsApp() {
     if (cart.length === 0) {
       alert('გთხოვთ, ჯერ დაამატოთ კერძი კალათაში!');
+      return;
+    }
+
+    let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    if (total < MIN_ORDER) {
+      alert(`ქეთერინგის მინიმალური შეკვეთა შეადგენს ${MIN_ORDER} €-ს. გთხოვთ დაამატოთ კერძები.`);
       return;
     }
 
@@ -353,19 +406,18 @@
     const address = document.getElementById('client-address').value;
 
     if (!name || !phone || !address) {
-      alert('გთხოვთ, შეავსოთ სახელი, ტელეფონი და მისამართი!');
+      alert('გთხოვთ, შეავსოთ სახელი, ტელეფონი და მისამართი/თარიღი!');
       return;
     }
 
     let itemsText = cart.map(i => `- ${i.name} (${i.quantity}x) — ${i.price * i.quantity}€`).join('\n');
-    let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-    let message = `გამარჯობა! ახალი შეკვეთა Royal Taste-ში:\n\n` +
+    let message = `გამარჯობა! ახალი ქეთერინგ შეკვეთა Royal Taste-ში:\n\n` +
                   `📋 *შეკვეთა:*\n${itemsText}\n\n` +
                   `💰 *სულ ჯამი:* ${total} €\n\n` +
                   `👤 *სახელი:* ${name}\n` +
                   `📞 *ტელეფონი:* ${phone}\n` +
-                  `📍 *მისამართი:* ${address}`;
+                  `📍 *მისამართი/თარიღი:* ${address}`;
 
     const myPhoneNumber = "34603688449"; 
     const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
